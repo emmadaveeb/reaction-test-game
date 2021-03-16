@@ -16,10 +16,13 @@ body, button {
 body {
     background-color: black;
     color: white;
+    height: 95vh;
+    margin: auto
 }
 
 button:disabled {
     opacity: 50%;
+    box-shadow: none !important;
 }
 .grow {
 
@@ -27,50 +30,49 @@ button:disabled {
    animation-duration: 3s;
 }
 
-.size {
-    font-size: 100%;
-}
+
 
 #dot {
     position: absolute;
     background-color:rgb(207, 4, 4);
     border-radius: 50%;
-    height: 18px;
-    width: 18px;
+    height: 6px;
+    width: 6px;
     visibility: hidden;
     border: 1px rgba(182, 9, 9, 0.918) solid;
     
 }
 
-/* #dot:active{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-} */
- h1 {
-     display: block;
-     font-size: 190%;
+
+h1 {
+     
+     font-size: 180%;
+     text-align: center;
+
 }
+
 P {
     padding: auto;
     margin: none;
 }
 .center {
-    display: flex;
-    justify-content: center;
-    width: 58rem;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 .box {
     position: relative;
     border: 1px solid black;
     border-radius: 6px;
-    height: 47rem;
-    width: 58rem;
+    height: 70%;
+    width: 60%;
     margin: auto;
     background-color: white;
     border: 11px rgba(139, 134, 134, 0.767) outset;
     box-sizing: border-box;
+    display: flex;
   
 }
 
@@ -82,7 +84,6 @@ P {
 }
 
 #start {
-    display: inline-block;
     margin: auto;
     font-size: 1em;
     border: none;
@@ -99,19 +100,23 @@ P {
 }
 
 #restart {
-    display: inline-block;
-    font-size: 1em;
+    
+    font-size: 140%;
     margin-left: auto;
     height: auto;
     border: 3px rgb(136, 13, 13) solid;
     color: white;
-    width: 15%;
-    height: 2.6rem;
+    padding: 0.5% 4%;
     background-color: #f11414;
-    border-radius: 15px;
+    border-radius: 0.7rem;
     align-self: center;
     outline: none;
  
+}
+
+#details {
+    display: flex;
+    flex-direction: row;
 }
 
 #restart:hover{
@@ -119,17 +124,15 @@ P {
    
 }
 
-#start:hover, #dot:active {
-    box-shadow: 0 0 8px gray;
+#start:hover, #dot:active, #dot:hover {
+    box-shadow: 0 0 13px gray;
 }
 
 #pdg {
     margin-left: 1em;
 }
 
-b {
-    display: inline;
-}
+
 
  #time, #score {
     font-size: 150%;
@@ -137,17 +140,31 @@ b {
 
 
 @media (max-width: 480px) {
-    .box {
-      height: 400px;
-      width: 390px;
+    
+    .center {
+        width: 80%;
+        height: 50%;
     }
 
-    #details, .center{
-       width: 390px;
+    #dot {
+        width: 3px;
+        height: 3px;
+    }
+
+    #details{
+       flex-direction: column;
+       
     }
     
     #restart {
-        display: block;
+        margin: 0 auto 5% 0;
+
+
+    }
+
+    #pdg {
+        margin-left: 0%;
+        margin-top: 0;
     }
     
-  }
+}

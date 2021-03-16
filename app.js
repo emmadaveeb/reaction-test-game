@@ -22,7 +22,7 @@ startBtn.addEventListener("click", () => {
 })
 
 function countDown() {
-    seconds = 60;
+    seconds = 5;
     time.textContent = seconds;
     score = 0;
     startScore.textContent = 0;
@@ -44,8 +44,8 @@ dot.addEventListener("click", () => {
 })
 
 function randomPos (){
-    let num1 = Math.floor(Math.random() * 96);
-    let num2 = Math.floor(Math.random() * 96);
+    let num1 = Math.floor(Math.random() * 95) + 1;
+    let num2 = Math.floor(Math.random() * 95) + 1;
     dot.style.top = `${num1}%`;
     dot.style.left = `${num2}%`;
     dot.classList.remove("grow");

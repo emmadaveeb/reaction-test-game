@@ -44,8 +44,8 @@ dot.addEventListener("click", () => {
 })
 
 function randomPos (){
-    let num1 = Math.floor(Math.random() * 97);
-    let num2 = Math.floor(Math.random() * 97);
+    let num1 = Math.floor(Math.random() * 96);
+    let num2 = Math.floor(Math.random() * 96);
     dot.style.top = `${num1}%`;
     dot.style.left = `${num2}%`;
     dot.classList.remove("grow");

@@ -22,7 +22,7 @@ startBtn.addEventListener("click", () => {
 })
 
 function countDown() {
-    seconds = 5;
+    seconds = 60;
     time.textContent = seconds;
     score = 0;
     startScore.textContent = 0;

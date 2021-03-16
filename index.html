@@ -7,16 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reaction Test</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 
     <h1 class="center">Reaction Test</h1>
-    <div id="details" class="center">
-        <p>Time left: <span id="time">3</span>s</p>
+    <div>
+        <p class="center align" style="margin-bottom: 0%;"><b style="margin-right: 3px;">Instructions:</b>Click the red dot that appears as fast as possible to test your reaction speed!</p>
+    </div>
+    <div class="center size">
+        <p>Time remaining: <span id="time">0</span>s</p>
         <p id="pdg">Score: <span id="score">0</span></p>
-        <button id="restart">RESTART</button>
+        <button id="restart" disabled>Reset</button>
     </div>
     <div class="box center">
         <div id="dot" class="grow"></div>

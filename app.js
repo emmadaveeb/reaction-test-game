@@ -1,21 +1,15 @@
 let dot = document.querySelector("#dot");
 let time = document.querySelector("#time");
-const restart = document.querySelector("#restart");
+const resetBtn = document.querySelector("#restart");
 const startBtn = document.querySelector("#start");
 let startScore = document.querySelector("#score");
 
 let timer;
-let seconds = 10;
+let seconds = 60;
 let score = 0;
 
-restart.addEventListener("click", ()=>{
-    startBtn.style.visibility = "visible";
-    dot.style.visibility = "hidden";
-    time.textContent = 0;
-    clearInterval(timer);
-    startScore.textContent = 0;
-    startBtn.innerText = `Game Over \n Click to play again`;
-    restart.disabled = true;
+resetBtn.addEventListener("click", ()=>{
+    end("Start");
 })
 
 startBtn.addEventListener("click", () => {
@@ -23,29 +17,25 @@ startBtn.addEventListener("click", () => {
     dot.style.visibility = "visible";
     randomPos();
     clearInterval(timer);
-    restart.disabled = false;
+    resetBtn.disabled = false;
     countDown();
 })
 
 function countDown() {
-    seconds = 10;
+    seconds = 60;
     time.textContent = seconds;
     score = 0;
     startScore.textContent = 0;
     timer = setInterval(() => {
         seconds--;
         time.textContent = seconds;
-        if (time.textContent == 0) {
-            window.clearInterval(timer);
-            dot.style.visibility = "hidden";
-            setTimeout(end, 300);
-
+        if(time.textContent == 0) {
+            
+            end(`Score: ${score} \n Click to play again`);
         }
     }, 1000);
 }
-
  
-
 
 dot.addEventListener("click", () => {
     randomPos();
@@ -65,10 +55,14 @@ function randomPos (){
 }
 
 
-function end(){
-    
+function end(str){
+    startBtn.innerText = str;
     startBtn.style.visibility = "visible";
-    startBtn.innerText = `Score: ${score} \n Click to play again`;
-    restart.disabled = true;
-
+    dot.style.visibility = "hidden";
+    resetBtn.disabled = true;
+    clearInterval(timer);
+    startScore.textContent = 0;
+    time.textContent = 0;
+    resetBtn.disabled = true;
 }
+
